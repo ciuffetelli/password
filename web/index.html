@@ -1,0 +1,48 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Password Generating System</title>
+		<script>
+
+			const token = 'Write_a_personal_message_there';
+			const char  = 'áàãâéêíóôõúüçÁÀÃÂÉÊÍÓÔÕÚÜÇ @#~/?,.;:{}[]|`¬!"£$%^&*()-_=+1234567890';
+			const techs = [
+				'github',
+				'instagran',
+				'facebook',
+				'google',
+				'youtube',
+				'linkedin',
+				'vmock',
+				'udemy'
+			];
+		</script>
+		<link rel="stylesheet" href="./style.css">
+	</head>
+	<body onload="start()">
+		<div id="warp">
+			<div class="formElement">
+				<label for="filter">Web site</label><br/>
+				<input id="filter" class="input" value="" placeholder="filter" onkeyup="filter(this.value)" autofocus /><br/>
+				<select id="select" multiple onchange="setFilter(this.value)"></select>
+			</div>
+			<div class="formElement">
+				<label for="password">Personal Password</label><br/>
+				  <input type="password" class="input" id="password" onkeyup="generator();" />
+			</div>
+			<div class="formElement">
+				<label for="size">Size</label><br/>
+				<input type="number" class="input" id="size" value="32" onchange="generator();" />
+			</div>
+			<div class="formElement">
+				<label for="size">Remove Accent</label><br/>
+				<input type="checkbox" class="input" id="accents" value="true" onclick="generator();" />
+			</div>			
+			<div class="result">
+				<h1 id="result" onclick="copy(this.innerHTML)"></h1>
+				<small id="copied"></small>
+			</div>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>
